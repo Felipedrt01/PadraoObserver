@@ -1,16 +1,18 @@
+package com.example.padraoobserver;
+
 public class Main {
-
     public static void main(String[] args) {
-        Jogo jogo1 = new Jogo("Super Adventure", "Aventura", "Game Studios");
-        Jogador jogador1 = new Jogador("Carlos");
-        Jogador jogador2 = new Jogador("Ana");
+        Editora editora = new Editora("Revista de Tecnologia");
 
-        jogador1.inscrever(jogo1);
-        jogador2.inscrever(jogo1);
+        Assinante assinante1 = new Assinante("João");
+        Assinante assinante2 = new Assinante("Maria");
 
-        jogo1.lancarJogo();
+        assinante1.assinar(editora);
+        assinante2.assinar(editora);
 
-        System.out.println(jogador1.getUltimaNotificacao());
-        System.out.println(jogador2.getUltimaNotificacao());
+        editora.publicarArtigo("Os Avanços da Inteligência Artificial");
+
+        System.out.println(assinante1.getUltimaNotificacao());
+        System.out.println(assinante2.getUltimaNotificacao());
     }
 }
